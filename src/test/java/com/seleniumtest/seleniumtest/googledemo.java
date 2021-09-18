@@ -1,6 +1,7 @@
 package com.seleniumtest.seleniumtest;
 
 import org.testng.annotations.Test;
+import org.openqa.selenium.By;
 import org.testng.annotations.BeforeTest;
 import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
