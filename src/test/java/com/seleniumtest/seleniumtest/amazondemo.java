@@ -37,11 +37,6 @@ public class amazondemo {
 		        linktestElement.click();
 	        }
 
-	        @Test(priority = 3)
-	        public void test4() {
-		        WebElement cssElement = driver.findElement(By.cssSelector("#sobe_d_b_3_4 .a-dynamic-image"));
-		        cssElement.click();
-	        }
 		@BeforeTest
 		public void beforeTest() {
 			System.setProperty("webdriver.edge.driver", "C:\\edgedriver_win64\\msedgedriver.exe");
