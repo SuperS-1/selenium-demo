@@ -1,11 +1,9 @@
 package com.seleniumtest.seleniumtest;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.Point;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,7 +14,7 @@ public class amazondemo {
 		private WebDriver driver;
 
 		@Test(priority = 0)
-		public void testJbkTitle() {
+		public void test1() {
 			driver.get("https://www.amazon.in");
 			String title = driver.getTitle();
 			System.out.println(title);
@@ -26,36 +24,28 @@ public class amazondemo {
 		}
 
 		@Test(priority = 1)
-		public void testJbkTitleInvalid() {
-			driver.manage().window().maximize();			
-			WebElement SearchBox = driver.findElement(By.id("twotabsearchtextbox"));
-			SearchBox.sendKeys("Hp Laptop");
+	        public void test2() {
+		        driver.manage().window().maximize();
+		        WebElement linktestElement = driver.findElement(By.linkText("Electronics"));
+		        linktestElement.click();
 
-		}
+	        }
 
-		@Test(priority = 2)
-		public void testJbkTitlesubmit() {
-			WebElement SearchIcon = driver.findElement(By.id("nav-search-submit-button"));
-			SearchIcon.click();
-		}
+	        @Test(priority = 2)
+	        public void test3() {
+		        WebElement linktestElement = driver.findElement(By.linkText("Laptop & Accessories"));
+		        linktestElement.click();
+	        }
 
-		@Test(priority = 3)
-		public void testJbkTitlecheck() {
-			WebElement Listbox = driver.findElement(By.id("p_72/1318476031"));
-			Listbox.click();
-		}
-
-		@Test(priority = 3)
-		public void testJbkTitlescroll() throws InterruptedException {
-			JavascriptExecutor js = (JavascriptExecutor)driver;
-			Thread.sleep(3000);			
-			js.executeScript("window.scrollBy(0,5000)");
-			Thread.sleep(3000);
-		}
+	        @Test(priority = 3)
+	        public void test4() {
+		        WebElement cssElement = driver.findElement(By.cssSelector("#sobe_d_b_3_4 .a-dynamic-image"));
+		        cssElement.click();
+	        }
 		@BeforeTest
 		public void beforeTest() {
-			System.setProperty("webdriver.chrome.driver", "C:\\chromedriver_win32\\chromedriver.exe");
-			driver = new ChromeDriver();
+			System.setProperty("webdriver.edge.driver", "C:\\edgedriver_win64\\msedgedriver.exe");
+			driver = new EdgeDriver();
 		}
 
 		@AfterTest
