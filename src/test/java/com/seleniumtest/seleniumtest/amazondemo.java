@@ -33,7 +33,7 @@ public class amazondemo {
 
 	        @Test(priority = 2)
 	        public void test3() {
-		        WebElement linktestElement = driver.findElement(By.linkText("Laptop & Accessories"));
+		        WebElement linktestElement = driver.findElement(By.linkText("Laptops & Accessories"));
 		        linktestElement.click();
 	        }
 
